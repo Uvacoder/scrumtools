@@ -4,7 +4,9 @@ tasks:
     init: |
       npm install -g yarn 
       yarn install
+      gp sync-done deps
   - name: Start Dev Server
+    init: gp sync-await deps
     command: yarn run serve
 
 # List the ports to expose. Learn more https://www.gitpod.io/docs/config-ports/
