@@ -1,12 +1,12 @@
 <template>
   <div class="row">
     <form class="col s12">
-      <h2>Host Session</h2>
+      <h2>Host</h2>
       <div class="input-field row">
         <input id="hostName" v-model="hostName" type="text" />
         <label for="hostName">Host Name</label>
       </div>
-      <div class="btn row" :class="!canHost && 'disabled'">
+      <div class="btn row" :class="hostName.length == 0 && 'disabled'">
         Host Poker Session
       </div>
     </form>
@@ -14,11 +14,10 @@
 </template>
 
 <script lang="ts">
-import { computed, ComputedRef, ref, Ref } from "vue";
+import { ref, Ref } from "vue";
 
 interface Data {
   hostName: Ref<string>;
-  canHost: ComputedRef<boolean>;
 }
 
 export default {
@@ -26,9 +25,6 @@ export default {
     const hostName = ref("");
     return {
       hostName,
-      canHost: computed(() => {
-        return hostName.value.length > 0;
-      }),
     };
   },
 };
