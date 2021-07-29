@@ -17,6 +17,8 @@
     "core-js": "^3.6.5",
     "materialize-css": "^1.0.0-rc.2",
     "register-service-worker": "^1.7.1",
+    "sass": "^1.36.0",
+    "sass-loader": "10.1.1",
     "vue": "^3.0.0",
     "vuex": "^4.0.0-0"
   },
