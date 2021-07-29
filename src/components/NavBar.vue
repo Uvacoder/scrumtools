@@ -1,7 +1,7 @@
 <template>
   <nav>
     <div class="nav-wrapper">
-      <a href="#" class="brand-logo">{{ title }}</a>
+      <a id="title" href="#" class="brand-logo">{{ title }}</a>
     </div>
   </nav>
 </template>
@@ -26,3 +26,9 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+#title {
+  margin-left: 1em;
+}
+</style>
