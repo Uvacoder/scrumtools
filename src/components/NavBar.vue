@@ -7,15 +7,22 @@
 </template>
 
 <script lang="ts">
+import { computed, ComputedRef } from "vue";
+import { useStore } from "../store/index";
+
+interface Data {
+  title: ComputedRef<string>;
+}
+
 export default {
-  props: {
-    title: {
-      type: String,
-      required: true,
-    },
-  },
-  setup(props): void {
-    console.log(props.title);
+  setup(): Data {
+    const store = useStore();
+    const title = computed(() => {
+      return store.state.title;
+    });
+    return {
+      title,
+    };
   },
 };
 </script>

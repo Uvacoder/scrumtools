@@ -1,14 +1,30 @@
 <template>
-  <nav-bar title="Scrum Tools"></nav-bar>
-  <div class="container">
-    <div class="waves-effect waves-light btn">Hello</div>
-  </div>
+  <nav-bar></nav-bar>
+  <home-page v-if="appState === 'Home'"></home-page>
+  <poker-page v-if="appState === 'Poker'"></poker-page>
 </template>
 
 <script lang="ts">
+import { ComputedRef, computed } from "vue";
 import NavBar from "./components/NavBar.vue";
+import { AppState, useStore } from "./store";
+import HomePage from "./components/HomePage.vue";
+import PokerPage from "./components/PokerPage.vue";
+
+interface Data {
+  appState: ComputedRef<AppState>;
+}
+
 export default {
-  components: { NavBar },
+  components: { NavBar, HomePage, PokerPage },
+  setup(): Data {
+    const store = useStore();
+    return {
+      appState: computed(() => {
+        return store.state.state;
+      }),
+    };
+  },
 };
 </script>
 
