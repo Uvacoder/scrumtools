@@ -6,7 +6,7 @@
 </template>
 
 <script lang="ts">
-import { useStore } from "@/store";
+import { useStore } from "@/store/store";
 
 interface Data {
   startPoker: () => void;

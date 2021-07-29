@@ -8,7 +8,7 @@
 
 <script lang="ts">
 import { computed, ComputedRef } from "vue";
-import { useStore } from "../store/index";
+import { useStore } from "../store/store";
 
 interface Data {
   title: ComputedRef<string>;

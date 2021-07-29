@@ -7,7 +7,7 @@
 <script lang="ts">
 import { ComputedRef, computed } from "vue";
 import NavBar from "./components/NavBar.vue";
-import { AppState, useStore } from "./store";
+import { AppState, useStore } from "./store/store";
 import HomePage from "./components/HomePage.vue";
 import PokerPage from "./components/PokerPage.vue";
 
