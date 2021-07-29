@@ -4,3 +4,11 @@ declare module '*.vue' {
   const component: DefineComponent<{}, {}, any>
   export default component
 }
+
+declare module 'balm-ui' {
+
+}
+
+declare module 'balm-ui-plus' {
+  
+}
